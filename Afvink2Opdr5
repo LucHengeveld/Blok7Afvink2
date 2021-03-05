@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Opdracht 5:
+printf "Opdracht 5:\n"
+
+printf "Voer het eerste cijfer tussen 0-100 in:\n"
+read cijfer1
+if (($cijfer1 < 0 || $cijfer1 > 100)); then
+	printf "Getal moet tussen 0 en 100 liggen!\n"
+	exit 1
+fi
+
+printf "Voer het tweede cijfer tussen 0-100 in:\n"
+read cijfer2
+if (($cijfer2 < 0 || $cijfer2 > 100)); then
+	printf "Getal moet tussen 0 en 100 liggen!\n"
+	exit 1
+fi
+
+printf "Voer het derde cijfer tussen 0-100 in:\n"
+read cijfer3
+if (($cijfer3 < 0 || $cijfer3 > 100)); then
+	printf "Getal moet tussen 0 en 100 liggen!\n"
+	exit 1
+fi
+
+printf "Voer het vierde cijfer tussen 0-100 in:\n"
+read cijfer4
+if (($cijfer4 < 0 || $cijfer4 > 100)); then
+	printf "Getal moet tussen 0 en 100 liggen!\n"
+	exit 1
+fi
+
+printf "Voer het vijfde cijfer tussen 0-100 in:\n"
+read cijfer5
+if (($cijfer5 < 0 || $cijfer5 > 100)); then
+	printf "Getal moet tussen 0 en 100 liggen!\n"
+	exit 1
+fi
+
+totaal=$(($cijfer1 + $cijfer2 + $cijfer3 + $cijfer4 + $cijfer5))
+
+gemiddelde=$(($totaal / 5))
+printf "Het gemiddelde is $gemiddelde\n"

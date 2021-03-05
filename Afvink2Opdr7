@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Opdracht 7
+printf "Opdracht 7:\n"
+
+printf "Voer je naam in:\n"
+read naam
+voornaam=$(echo $naam | cut -d " " -f1)
+
+docentnamen=("Jacob" "Said" "Tom")
+docent=false
+
+for namen in "${docentnamen[@]}"; do
+    if [[ "${voornaam,,}" == "${namen,,}" ]]; then
+        docent=true
+        break
+    fi
+done
+
+if $docent; then
+	printf "Welkom geachte docent: $namen\n"
+else
+	printf "Welkom gast: $voornaam\n"
+fi

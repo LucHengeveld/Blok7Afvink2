@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Opdracht 3:
+printf "Opdracht 3:\n"
+
+printf "Voeg de nummer van een dag in:\n"
+read nummerdag
+printf "Voeg de nummer van een maand in:\n"
+read nummermaand
+printf "Voeg de nummer van een jaar in:\n"
+read nummerjaar
+
+if (($nummerjaar > 99 )); then
+	nummerjaar2=${nummerjaar: -2}
+fi
+
+if (($nummerdag*$nummermaand == $nummerjaar2)); then
+	printf "MAGISCH JAAR: $nummerdag/$nummermaand/$nummerjaar\n"
+else
+	printf "Geen magisch jaar: $nummerdag/$nummermaand/$nummerjaar\n"
+fi

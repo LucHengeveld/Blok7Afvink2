@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Opdracht 1:
+echo "Opdracht 1:"
+
+regex='^[0-9]+$'
+
+printf "Voer het aantal seconden in:"
+read secinput
+if ! [[ "$secinput" =~ $regex ]]; then
+	echo "Geen geheel getal" 2>/dev/null || exit 1
+fi
+
+aantaldagen=$((secinput / 86400))
+secover=$((secinput%86400))
+
+aantaluur=$((secover/3600))
+secover=$((secover%3600))
+
+aantalmin=$((secover/60))
+secover=$((secover%60))
+
+printf "Dagen:Uur:Minuten:Seconden\n"
+printf "$aantaldagen:$aantaluur:$aantalmin:$secover\n"
+
+##########
+
+printf "\n"
+printf "Opdracht 2:\n"	
+# Opdracht 2:
+
+bereken_spaties () {
+    spaties=$((8-${#1}))
+    for getal in $(seq 1 $spaties); do
+        printf " "
+    done
+    echo "$1 $2"
+}
+
+bereken_spaties $aantaldagen dagen
+bereken_spaties $aantaluur uur
+bereken_spaties $aantalmin minuten
+bereken_spaties $secover seconden

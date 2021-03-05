@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Opdracht 4:
+printf "Opdracht 4:\n"
+
+printf "Voer een heel getal groter dan 0 in:\n"
+read getal1
+if (($getal1 <=0)); then
+	printf "Getal moet groter zijn dan 0!\n"
+	exit 1
+fi
+
+printf "Voer nog een heel getal groter dan 0 in:\n"
+read getal2
+if (($getal2 <=0)); then
+	printf "Getal moet groter zijn dan 0!\n"
+	exit 1
+fi
+
+plus=$(($getal1+$getal2))
+printf "+: $plus\n"
+
+min=$(($getal1-$getal2))
+printf -- "-: $min\n"
+
+keer=$(($getal1*$getal2))
+printf "x: $keer\n"
+
+delen=$(($getal1/$getal2))
+printf "/: $delen\n"
+
+macht=$(($getal1**$getal2))
+printf "^: $macht\n"
